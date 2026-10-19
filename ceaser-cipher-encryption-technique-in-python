@@ -1,0 +1,17 @@
+alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+plaintext = input("Enter plaintext: ").upper()
+key = int(input("Enter key: "))
+
+ciphertext = ""
+
+for char in plaintext:
+    if char in alphabet:
+        p = alphabet.index(char)
+        c = (p + key) % 26
+        ciphertext += alphabet[c]
+    else:
+        ciphertext += char
+
+print("Plaintext:", plaintext)
+print("Key:", key)
+print("Ciphertext:", ciphertext)
